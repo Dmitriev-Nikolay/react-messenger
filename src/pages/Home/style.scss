@@ -1,14 +1,12 @@
 .home-page {
-    height: 100vh;
-    overflow: hidden;
     width: 80%;
     margin: 0 auto;
+    height: 100vh;
 }
 
 .home-page-messenger {
     display: flex;
     flex-wrap: wrap;
-    min-height: 100%;
 }
 
 .home-page-chat-name {

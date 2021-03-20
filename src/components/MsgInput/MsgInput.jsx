@@ -18,10 +18,11 @@ const useStyles = makeStyles(() => ({
     textField: {
         width: '90%',
         marginLeft: 'auto',
-        marginRight: 'auto',            
+        marginRight: 'auto',
         paddingBottom: 0,
         marginTop: 0,
-        fontWeight: 500
+        fontWeight: 500,
+        colorSecondary: '#f7a985fb',
     },
 }));
 
@@ -33,18 +34,18 @@ export default (props) => {
                 autoFocus
                 type="text"
                 // ref={ props.focus }
-                value= { props.clearInput }
-                onChange={ props.change }
-                onKeyUp={ props.keyup }
+                value={props.clearInput}
+                onChange={props.change}
+                onKeyUp={props.keyup}
                 id="outlined-basic"
                 label="Напишите сообщение"
                 variant="outlined"
             />
-            <Button 
-                className={ classes.btn_input }
-                variant="outlined" 
-                color="primary" 
-                onClick={ props.click }>
+            <Button
+                className={classes.btn_input}
+                variant="outlined"
+                color="primary"
+                onClick={props.click}>
                 Отправить
             </Button>
         </div>

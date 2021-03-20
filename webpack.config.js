@@ -17,6 +17,9 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.svg$/i,
+            },
+            {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
@@ -50,6 +53,7 @@ module.exports = {
             '@lib': path.resolve(__dirname, 'src', 'resources', 'libraries'),
             '@actions': path.resolve(__dirname, 'src', 'core', 'store', 'actions'),
             '@middleware': path.resolve(__dirname, 'src', 'core', 'middleware'),
+            '@icons': path.resolve(__dirname, 'src', 'icons'),
         }
     },
     plugins: [

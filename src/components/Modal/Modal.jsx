@@ -10,12 +10,25 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import PersonIcon from '@material-ui/icons/Person';
-import { blue } from '@material-ui/core/colors';
+import { blue, green, orange } from '@material-ui/core/colors';
 
 const useStyles = makeStyles({
+    dialog: {
+        background: '#f7a985fb',
+    },
+    dialogTitle: {
+        backgroundColor:  '#f7a985fb',
+        color: '#fff',
+        fontFamily: 'Helvetica Neue, Helvetica, sans-serif',
+    },
+    list: {
+        background: 'linear-gradient(45deg, #f09fb1f5 30%, #fab089 90%)',
+        color: '#fff',
+        fontFamily: 'Helvetica Neue, Helvetica, sans-serif',
+    },
     avatar: {
-        backgroundColor: blue[100],
-        color: blue[600],
+        backgroundColor:  '#f7a985fb',
+        color: orange[800],
     },
     testClass: {
         fontSize: '10em',
@@ -31,7 +44,7 @@ const useStyles = makeStyles({
         height: 48,
         padding: '0 30px',
         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    }
+}
 });
 
 function SimpleDialog(props) {
@@ -47,11 +60,11 @@ function SimpleDialog(props) {
         onClose(value);
     };
     return (
-        <Dialog onClose={ handleClose } aria-labelledby="simple-dialog-title" open={ open }>
-            <DialogTitle id="simple-dialog-title">Выберете собеседника</DialogTitle>
-            <List>
+        <Dialog className={ classes.dialog } onClose={ handleClose } aria-labelledby="simple-dialog-title" open={ open }>
+            <DialogTitle className={ classes.dialogTitle } id="simple-dialog-title">Выбери собеседника</DialogTitle>
+            <List className={ classes.list }>
                 {props.emails.map((email) => (
-                    <ListItem button onClick={ () => handleListItemClick(email) } key={ email }>
+                    <ListItem button onClick={() => handleListItemClick(email)} key={ email }>
                         <ListItemAvatar>
                             <Avatar className={ classes.avatar }>
                                 <PersonIcon />
@@ -90,7 +103,7 @@ export default function SimpleDialogDemo(props) {
             <Button className={ classes.btn_contact } variant="outlined" color="primary" onClick={ handleClickOpen }>
                 Открыть список контактов
             </Button>
-            <SimpleDialog selectedValue={ selectedValue } open={ open } onClose={ handleClose } addChat={ props.add } emails={ props.emails }/>
+            <SimpleDialog selectedValue={ selectedValue } open={ open } onClose={ handleClose} addChat={ props.add } emails={ props.emails } />
         </div>
     );
 };

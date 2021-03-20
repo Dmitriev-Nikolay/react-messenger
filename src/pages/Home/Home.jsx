@@ -1,6 +1,7 @@
 import React from 'react';
 import ChatList from "@containers/ChatList";
 import MessageField from "@containers/MessageField";
+import MessageFieldEmpty from "@components/MessageFieldEmpty";
 import Header from "@components/Header";
 import { StylesProvider } from '@material-ui/core/styles';
 
@@ -13,7 +14,7 @@ export default (props) => {
         <Header chatIdD={ props.chatId } />
         <div className="home-page-messenger">
           <ChatList />
-          { props.chatId && <MessageField /> } 
+          { props.chatId ? <MessageField /> : <MessageFieldEmpty /> } 
         </div>
       </div>
     </StylesProvider>

@@ -21,13 +21,16 @@ class MessageField extends Component { // export default
         this.chatContainer = React.createRef();
         // this.textInput = React.createRef(); // change to autofocus
     };
-    // componentDidMount() { // change to autofocus
-    //     this.textInput.current.focus();
-    // };
+    componentDidMount() { // scroll when load
+        this.scrollToMyRef();
+    };
+    componentDidUpdate() { // scroll when update MessageList
+        this.scrollToMyRef();
+    };
     sendMessage = (message) => {
         if (!message) {
         } else {
-            this.props.send('Анна', this.state.input); //вызов функции отправки через action
+            this.props.send('Анна', this.state.input); // вызов функции отправки через action
             this.setState({
                 // messages: [...this.state.messages, { text: message, name: "Анна" }],
                 input: "",

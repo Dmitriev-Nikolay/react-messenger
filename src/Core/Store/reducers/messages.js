@@ -16,7 +16,7 @@ export default (store = storeMessages, action) => {
         };
         case 'SEND_MSG': {
             const msg = action.payload;
-            return update(store, { messages: { $push: [ msg ] } } );
+            return update(store, { messages: { $push: [msg] } } );
         };
         default: {
             return store;
